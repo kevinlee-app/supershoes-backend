@@ -1,0 +1,126 @@
+POST  http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{"username": "newuser16", "password": "securepassword"}
+
+###
+
+POST  http://127.0.0.1:8000/register/
+Content-Type: application/json
+
+{"first_name": "hello", "username": "newuser16", "email": "newuser16@example.com", "password": "securepassword"}
+
+###
+
+POST  http://127.0.0.1:8000/logout/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMDk0NDM5LCJpYXQiOjE3NDEwOTQxMzksImp0aSI6Ijg5NTQzMmI1NTQyMzQ2ZmVhYWEwODQ3NmMxY2E2ZDRjIiwidXNlcl9pZCI6MX0.P2_6t2Kv3I1K5uyfFPYjDs2GG9OYr6uHHsr9W5lFV14
+
+{"refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0MTE4MDUzOSwiaWF0IjoxNzQxMDk0MTM5LCJqdGkiOiI0YWFmNzcxMzRkOGE0NGQ4YjgzMzJhZmVjNmQ2ZTBlYiIsInVzZXJfaWQiOjF9.ahMs99_rMbUnVcshCU7Ax6uxviXP1JOw_Kq7NvoTOiA"}
+
+###
+
+GET  http://127.0.0.1:8000/user/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzNzU5MDEyLCJpYXQiOjE3NDExNjcwMTIsImp0aSI6IjMyNjEyY2E4OGUxNDRkYTNiMzEyNGRkZWQxMTJhYTUxIiwidXNlcl9pZCI6MTR9.lqYAM3unHemrnRet-rc7gltBIH6hXRQhJHhUlMm4SHo
+
+###
+
+POST  http://127.0.0.1:8000/user/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzNzU5MDEyLCJpYXQiOjE3NDExNjcwMTIsImp0aSI6IjMyNjEyY2E4OGUxNDRkYTNiMzEyNGRkZWQxMTJhYTUxIiwidXNlcl9pZCI6MTR9.lqYAM3unHemrnRet-rc7gltBIH6hXRQhJHhUlMm4SHo
+
+{"name": "Kevin", "email:": "test@gmail.com", "is_staff": true, "profile_photo_url": "https://www.google.com"}
+
+
+
+###
+
+GET   http://127.0.0.1:8000/products?page=1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzNzU5MDEyLCJpYXQiOjE3NDExNjcwMTIsImp0aSI6IjMyNjEyY2E4OGUxNDRkYTNiMzEyNGRkZWQxMTJhYTUxIiwidXNlcl9pZCI6MTR9.lqYAM3unHemrnRet-rc7gltBIH6hXRQhJHhUlMm4SHo
+
+{"name": "Kevin", "email:": "test@gmail.com", "is_staff": true, "profile_photo_url": "https://www.google.com"}
+
+
+###
+
+GET   http://127.0.0.1:8000/products
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzNzU5MDEyLCJpYXQiOjE3NDExNjcwMTIsImp0aSI6IjMyNjEyY2E4OGUxNDRkYTNiMzEyNGRkZWQxMTJhYTUxIiwidXNlcl9pZCI6MTR9.lqYAM3unHemrnRet-rc7gltBIH6hXRQhJHhUlMm4SHo
+
+# {"name": "Kevin", "email:": "test@gmail.com", "is_staff": true, "profile_photo_url": "https://www.google.com"}
+
+###
+
+GET   http://127.0.0.1:8000/products/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzNzU5MDEyLCJpYXQiOjE3NDExNjcwMTIsImp0aSI6IjMyNjEyY2E4OGUxNDRkYTNiMzEyNGRkZWQxMTJhYTUxIiwidXNlcl9pZCI6MTR9.lqYAM3unHemrnRet-rc7gltBIH6hXRQhJHhUlMm4SHo
+
+{"name": "Kevin", "email:": "test@gmail.com", "is_staff": true, "profile_photo_url": "https://www.google.com"}
+
+
+
+###
+
+GET   http://127.0.0.1:8000/categories/?page=1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzNzU5MDEyLCJpYXQiOjE3NDExNjcwMTIsImp0aSI6IjMyNjEyY2E4OGUxNDRkYTNiMzEyNGRkZWQxMTJhYTUxIiwidXNlcl9pZCI6MTR9.lqYAM3unHemrnRet-rc7gltBIH6hXRQhJHhUlMm4SHo
+
+{"name": "Kevin", "email:": "test@gmail.com", "is_staff": true, "profile_photo_url": "https://www.google.com"}
+
+
+###
+
+GET   http://127.0.0.1:8000/categories/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzNzU5MDEyLCJpYXQiOjE3NDExNjcwMTIsImp0aSI6IjMyNjEyY2E4OGUxNDRkYTNiMzEyNGRkZWQxMTJhYTUxIiwidXNlcl9pZCI6MTR9.lqYAM3unHemrnRet-rc7gltBIH6hXRQhJHhUlMm4SHo
+
+{"name": "Kevin", "email:": "test@gmail.com", "is_staff": true, "profile_photo_url": "https://www.google.com"}
+
+
+###
+
+GET   http://127.0.0.1:8000/transactions/?page=1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzNzU5MDEyLCJpYXQiOjE3NDExNjcwMTIsImp0aSI6IjMyNjEyY2E4OGUxNDRkYTNiMzEyNGRkZWQxMTJhYTUxIiwidXNlcl9pZCI6MTR9.lqYAM3unHemrnRet-rc7gltBIH6hXRQhJHhUlMm4SHo
+
+{"name": "Kevin", "email:": "test@gmail.com", "is_staff": true, "profile_photo_url": "https://www.google.com"}
+
+
+###
+
+GET   http://127.0.0.1:8000/transactions/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzNzU5MDEyLCJpYXQiOjE3NDExNjcwMTIsImp0aSI6IjMyNjEyY2E4OGUxNDRkYTNiMzEyNGRkZWQxMTJhYTUxIiwidXNlcl9pZCI6MTR9.lqYAM3unHemrnRet-rc7gltBIH6hXRQhJHhUlMm4SHo
+
+{"name": "Kevin", "email:": "test@gmail.com", "is_staff": true, "profile_photo_url": "https://www.google.com"}
+
+
+###
+
+POST   http://127.0.0.1:8000/checkout/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzNzU5MDEyLCJpYXQiOjE3NDExNjcwMTIsImp0aSI6IjMyNjEyY2E4OGUxNDRkYTNiMzEyNGRkZWQxMTJhYTUxIiwidXNlcl9pZCI6MTR9.lqYAM3unHemrnRet-rc7gltBIH6hXRQhJHhUlMm4SHo
+
+# {"address": "alamat", "total_price": 2000, "shipping_price": 100, "details":[{"product":[{"id": 1, "quantity": 2, "id":2, "quantity":3}]}]}
+{
+  "address": "alamat",
+  "status": "PENDING",
+  "total_price": 2000,
+  "shipping_price": 100,
+  "details": [
+    {
+      "product_id": 1,
+      "quantity": 2
+    },
+    {
+      "product_id": 2,
+      "quantity": 5
+    },
+    {
+      "product_id": 3,
+      "quantity": 1
+    }
+  ]
+}
