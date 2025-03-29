@@ -20,6 +20,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 
 ###
 
+POST http://127.0.0.1:8000/api/token/refresh/
+Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMDk0NDM5LCJpYXQiOjE3NDEwOTQxMzksImp0aSI6Ijg5NTQzMmI1NTQyMzQ2ZmVhYWEwODQ3NmMxY2E2ZDRjIiwidXNlcl9pZCI6MX0.P2_6t2Kv3I1K5uyfFPYjDs2GG9OYr6uHHsr9W5lFV14
+
+{"refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0ODM4NDAwOCwiaWF0IjoxNzQzMjAwMDA4LCJqdGkiOiIzZDdkMzI1NTc2MTY0ZmFkYTgyNjY3MjM5ODhmNDJkMiIsInVzZXJfaWQiOjE3fQ.DUte7myfbB4CCyyIi1zWevUIhnMI29oAmpfzSLZNBSI"}
+
+###
+
 GET  http://127.0.0.1:8000/user/
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzNzU5MDEyLCJpYXQiOjE3NDExNjcwMTIsImp0aSI6IjMyNjEyY2E4OGUxNDRkYTNiMzEyNGRkZWQxMTJhYTUxIiwidXNlcl9pZCI6MTR9.lqYAM3unHemrnRet-rc7gltBIH6hXRQhJHhUlMm4SHo
