@@ -33,13 +33,13 @@ class ProductView(APIView):
     def get(self, request, product_id=None):
         if product_id:
             product = get_object_or_404(Product, id=product_id)
-            serializer = ProductSerializer(product)
+            serializer = ProductSerializer(product, context={'request': request})
             return Response(serializer.data, status=status.HTTP_200_OK)
 
         products = Product.objects.all()
         paginator = self.pagination_class
         paginated_products = paginator.paginate_queryset(products, request)
-        serializer = ProductSerializer(products, many=True)
+        serializer = ProductSerializer(products, many=True, context={'request': request})
         return paginator.get_paginated_response(serializer.data)
 
 class TransactionView(APIView):

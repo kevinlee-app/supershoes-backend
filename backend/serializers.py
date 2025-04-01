@@ -7,6 +7,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.exceptions import AuthenticationFailed
 from django.contrib.auth import authenticate
 import re
+from django.conf import settings
 
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
@@ -44,9 +45,19 @@ class UserSerializer(serializers.ModelSerializer):
         return instance
 
 class ProductGallerySerializer(serializers.ModelSerializer):
+    image_url = serializers.SerializerMethodField()
     class Meta:
         model = ProductGallery
-        fields = '__all__'
+        fields = ['id', 'image_url']
+
+    def get_image_url(self, obj):
+        request = self.context.get('request')
+        if obj.image:
+            image_url = obj.image.url
+            if request:
+                return request.build_absolute_uri(image_url)
+            return f"{settings.MEDIA_URL}{image_url}"
+        return None
 
 class ProductCategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -54,7 +65,7 @@ class ProductCategorySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ProductSerializer(serializers.ModelSerializer):
-    gallery = ProductGallerySerializer(many=True, read_only=True)
+    gallery = serializers.SerializerMethodField()
     category = ProductCategorySerializer()
 
     class Meta:
@@ -62,8 +73,9 @@ class ProductSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def get_gallery(self, obj):
-        gallery_qs = ProductGallery.objects.filter(product=obj)  # Use filter() to get all related objects
-        return ProductGallerySerializer(gallery_qs, many=True).data 
+        gallery_qs = ProductGallery.objects.filter(product=obj)
+        request = self.context.get('request')
+        return ProductGallerySerializer(gallery_qs, many=True, context={'request': request}).data 
 
 class TransactionDetailSerializer(serializers.ModelSerializer):
     product = ProductSerializer(read_only=True)
