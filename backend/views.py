@@ -37,6 +37,10 @@ class ProductView(APIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
 
         products = Product.objects.all()
+        category_id = request.query_params.get('category_id')
+        if category_id:
+            products = products.filter(category_id=category_id)
+            
         paginator = self.pagination_class
         paginated_products = paginator.paginate_queryset(products, request)
         serializer = ProductSerializer(products, many=True, context={'request': request})
