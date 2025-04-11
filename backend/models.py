@@ -44,9 +44,13 @@ class TransactionDetail(models.Model):
     def __str__(self):
         return self.transaction.user.username
 
+def product_gallery_upload_path(instance, filename):
+    product_id = instance.product.id
+    return f'images/{product_id}/{filename}'
+
 class ProductGallery(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="gallery")
-    url = models.CharField(max_length=300)
+    image = models.ImageField(upload_to=product_gallery_upload_path, default='images/default_shoes.png', blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
