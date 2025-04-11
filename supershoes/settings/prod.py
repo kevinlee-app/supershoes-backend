@@ -3,7 +3,7 @@ from .base import *
 DEBUG = False
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "fallback-insecure-key")
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
