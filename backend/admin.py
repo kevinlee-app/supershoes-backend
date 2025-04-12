@@ -65,3 +65,7 @@ admin.site.register(ProductCategory)
 admin.site.register(ProductGallery, ProductGalleryAdmin)
 admin.site.register(Transaction, TransactionAdmin)
 admin.site.register(TransactionDetail, TransactionDetailAdmin)
+
+admin.site.site_header = "SuperShoes"
+admin.site.site_title = "SuperShoes Admin Portal"
+admin.site.index_title = "Welcome to SuperShoes Admin"
